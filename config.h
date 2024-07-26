@@ -69,12 +69,12 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *browsercmd[] = { "firefox", NULL };
-static const char *extmoncmd[] = { "xrandr", "--output", "DP-1", "--auto", "--output", "eDP-1", "--off", NULL };
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *intmoncmd[] = { "xrandr", "--output", "eDP-1", "--auto", "--output", "DP-1", "--off", NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *browsercmd[] = { "firefox",                       NULL };
+static const char *extmoncmd[]  = { "~/.local/share/dwm/display.sh", "-d", NULL };
+static char dmenumon[2]         = "0"; /* component of dmenucmd,     manipulated in spawn() */
+static const char *dmenucmd[]   = { "dmenu_run",                     "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *intmoncmd[]  = { "~/.local/share/dwm/display.sh", "-p", NULL };
+static const char *termcmd[]    = { "kitty",                         NULL };
 
 static const Key keys[] = {
   /* modifier                     key        function        argument */
